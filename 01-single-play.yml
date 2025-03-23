@@ -1,0 +1,16 @@
+# ansible n1 -m file -a "path=/home/fedora/opt/devops state=directory"
+---
+- name: Update n1 servers
+  hosts: n1
+  tasks:
+    - name: Create Directory
+      file:
+        path: /home/fedora/opt/devops
+        state: directory
+
+    - name: Create info.txt with content
+      copy:
+        dest: /home/fedora/opt/devops/info.txt
+        content: "Hello from Ansible!\n"
+      become: yes
+...
