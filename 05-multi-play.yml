@@ -1,0 +1,45 @@
+
+...
+- name: Update n1 servers
+  hosts: n1
+  tasks:
+    - name: Create Directory
+      file:
+        path: /home/fedora/opt/devops1
+        state: directory
+
+    - name: Create info.txt with content
+      copy:
+        dest: /home/fedora/opt/devops/info.txt
+        content: "Hello from Ansible!\n"
+      become: yes
+
+- name: Update n2 servers
+  hosts: n2
+  tasks:
+    - name: Create Directory
+      file:
+        path: /home/fedora/opt/devops1
+        state: directory
+
+    - name: Create info.txt with content
+      copy:
+        dest: /home/fedora/opt/devops/info.txt
+        content: "Hello from Ansible!\n"
+      become: yes
+
+- name: Update group1 servers
+  hosts: g1
+  tasks:
+    - name: Create Directory
+      file:
+        path: /home/fedora/opt/devops-group
+        state: directory
+
+    - name: Create info.txt with content
+      copy:
+        dest: /home/fedora/opt/devops/info.txt
+        content: "Hello from Ansible!\n"
+      become: yes
+
+...
