@@ -1,0 +1,12 @@
+---
+- name: Under Maintenance
+  hosts: g1
+  become: yes
+
+  tasks:
+  - name: update maintenance
+    copy: 
+      src: maintenance.html
+      dest: /var/www/html/ndex.hml
+
+...

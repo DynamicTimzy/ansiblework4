@@ -1,0 +1,20 @@
+---
+- name: Install HTTP server
+  hosts: n2
+  become: yes
+  tasks:
+    - name: Install Apache
+      dnf:
+        name: Apache
+        state: present
+
+    - name: start Apache
+      service:
+        name: Apache
+        state: started
+
+    - name: enable Apache
+      service:
+        name: Apache 
+        enabled: yes
+...
