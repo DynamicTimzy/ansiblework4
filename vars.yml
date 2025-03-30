@@ -1,12 +1,12 @@
 ---
-- name: Static page
-  hosts: n3
+- name: Dynamic page
+  hosts: g2
   become: yes
   vars:
     myusername: Timmy  
 
   tasks:
-  - name: update static page
+  - name: update dynamic page
     template: 
       src: dynamic.j2
       dest: /var/www/html/dynamic.html
