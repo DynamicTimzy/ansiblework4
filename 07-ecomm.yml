@@ -1,0 +1,24 @@
+---
+- name: Deploy web app
+  hosts: n4
+  become: yes
+  tasks:
+    - name: Install GIT
+      yum:
+        name: git
+        state: present
+
+    - name: host code
+      git:
+        repo: https://github.com/DynamicTimzy/ecomm-3.git  #the git repository link
+        dest: /var/www/html
+    - name: start httpd
+      service:
+        name: httpd
+        state: started
+
+    - name: enable httpd
+      service:
+        name: httpd 
+        enabled: yes
+...
