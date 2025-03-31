@@ -3,8 +3,13 @@
   hosts: n1
   become: yes
   tasks:
+<<<<<<< HEAD
     - name: Install git
       dnf:
+=======
+    - name: Install GIT
+      yum:
+>>>>>>> 225544f76febd1922b23d7445cfdf728b26ac7a9
         name: git
         state: present
 
