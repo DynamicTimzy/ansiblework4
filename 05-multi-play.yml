@@ -40,5 +40,4 @@
         dest: /home/fedora/opt/devops/info.txt
         content: "Hello from Ansible!\n"
       become: yes
-
 ...

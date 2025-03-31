@@ -1,10 +1,10 @@
----
+...
 - name: Install HTTP server
   hosts: n2
   become: yes
   tasks:
     - name: Install Apache
-      dnf:
+      apt:
         name: Apache
         state: present
 
