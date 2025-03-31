@@ -1,4 +1,4 @@
-...
+---
 - name: Update n1 servers
   hosts: n1
   tasks:
@@ -40,4 +40,4 @@
         dest: /home/fedora/opt/devops/info.txt
         content: "Hello from Ansible!\n"
       become: yes
-...
+---

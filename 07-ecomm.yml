@@ -3,7 +3,7 @@
   hosts: n1
   become: yes
   tasks:
-    - name: Install GIT
+    - name: Install git
       dnf:
         name: git
         state: present
